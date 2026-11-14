@@ -1,0 +1,61 @@
+{
+  "name": "dsh-plugin-doctor",
+  "version": "0.1.0",
+  "description": "Read-only health check for a DSH profile: plugin upgrade status, DSH compatibility, patch overrides and shadowed skills.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "doctor",
+    "diagnostics",
+    "plugin-manager",
+    "cordis"
+  ],
+  "license": "MIT",
+  "engines": {
+    "dsh": ">=0.2.0-0",
+    "node": ">=20"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml",
+      "listedByDefault": true
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.1.0",
+    "@deepseek-ai/dsh-tools": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "test": "node test/smoke.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ginxiu0330-sketch/dsh-plugin-doctor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ginxiu0330-sketch/dsh-plugin-doctor/issues"
+  },
+  "homepage": "https://github.com/ginxiu0330-sketch/dsh-plugin-doctor#readme"
+}
