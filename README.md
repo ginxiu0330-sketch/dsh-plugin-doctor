@@ -68,7 +68,13 @@ The built-in plugin manager answers *"is this one package installed and enabled?
 
 The plugin is a bundle: an npm package plus a `cordis.patch.yml` that inserts one row.
 
-**From the GUI** — Settings → Plugins → install from local path, and point it at this directory.
+**From GitHub** — not on npm yet, so start from a checkout:
+
+```bash
+git clone https://github.com/ginxiu0330-sketch/dsh-plugin-doctor
+```
+
+**From the GUI** — Settings → Plugins → install from local path, and point it at that checkout.
 
 **Manually** — in your profile (`%USERPROFILE%\.dsh\profiles\<name>` by default):
 
@@ -127,6 +133,7 @@ No file is read or written by this plugin; the profile stays the host's business
 ## Roadmap
 
 - **0.2** — `plugin_upgrade` with `dryRun: true` as the default: snapshot `package.json` / `cordis.patch.yml`, upgrade one package at a time, report every `ChangeResult.application`, and print the exact rollback command. The desktop host forces `allowRestart: false`, so "upgrade" here always means *upgrade, then tell the user to restart* — never a bare Electron relaunch.
+- **0.2** — publish to npm so the install is one line instead of a clone plus a `file:` dependency.
 - **0.3** — read the profile's own `cordis.patch.yml` (via `ctx.profileContext`) to flag overrides whose target id no loaded bundle declares, and stale `.bak` backups left by hand edits.
 - **0.3** — skill provenance: git remote plus a content hash per skill, since the catalog exposes no version.
 - Deliberately out of scope: a client UI panel, unattended upgrades, `dsh.client` injection.
