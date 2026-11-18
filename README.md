@@ -2,6 +2,10 @@
 
 [![test](https://github.com/ginxiu0330-sketch/dsh-plugin-doctor/actions/workflows/test.yml/badge.svg)](https://github.com/ginxiu0330-sketch/dsh-plugin-doctor/actions/workflows/test.yml)
 
+> **Not the npm package `dsh-plugin-doctor`.** That one is a CLI that audits a bundle *before*
+> installation, in a throwaway home. This is a DSH plugin that reads a profile *after* it is
+> running. Both are useful; they answer different questions. Nothing here is published to npm.
+
 DSH (DeepSeek Harness) is a local agent runtime built on the cordis microkernel. A *profile* is
 the directory DSH boots from: a `package.json` listing plugin bundles, plus a `cordis.patch.yml`
 that layers configuration over them. Bundles arrive through three channels at once — the npm
