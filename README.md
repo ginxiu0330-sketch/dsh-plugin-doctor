@@ -1,5 +1,7 @@
 # dsh-plugin-doctor
 
+[![test](https://github.com/ginxiu0330-sketch/dsh-plugin-doctor/actions/workflows/test.yml/badge.svg)](https://github.com/ginxiu0330-sketch/dsh-plugin-doctor/actions/workflows/test.yml)
+
 DSH (DeepSeek Harness) is a local agent runtime built on the cordis microkernel. A *profile* is
 the directory DSH boots from: a `package.json` listing plugin bundles, plus a `cordis.patch.yml`
 that layers configuration over them. Bundles arrive through three channels at once — the npm
